@@ -53,8 +53,16 @@ class _CarsState extends State<Cars> {
                             ),
                             GestureDetector(
                               child: Container(
+                                margin: EdgeInsets.all(5.0),
                                 height: 200,
-                                child: Image.network(snapshot.data[i].img_url),
+                                decoration: BoxDecoration(
+                                    image: DecorationImage(
+                                        fit: BoxFit.cover,
+                                        image: NetworkImage(
+                                            'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')),
+                                    borderRadius: BorderRadius.all(
+                                        Radius.circular(10.0))),
+                                //child: Image.network(snapshot.data[i].img_url),
                               ),
                               onTap: () {
                                 Navigator.push(
