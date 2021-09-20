@@ -9,6 +9,7 @@ import 'cars.dart';
 import 'googleSignIn/googleSignInPage.dart';
 
 Future<void> main() async {
+  //initializing firebase
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
