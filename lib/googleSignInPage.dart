@@ -10,9 +10,19 @@ class SiginInPage extends StatelessWidget {
         title: Text('Welcome!'),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          Container(
-            child: Text('Test'),
+          Center(
+            child: Container(
+              child: Text('Test'),
+            ),
+          ),
+          Center(
+            child: ElevatedButton(
+              child: Text('Sign Up With Google'),
+              onPressed: () {},
+            ),
           ),
         ],
       ),

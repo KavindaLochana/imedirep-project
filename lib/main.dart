@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:imedirep/googleSignInProvider.dart';
+import 'package:provider/provider.dart';
 
 import 'cars.dart';
 
@@ -14,11 +16,12 @@ Future<void> main() async {
 
 class MyApp extends StatelessWidget {
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: DataFromAPI(),
-    );
-  }
+  Widget build(BuildContext context) => ChangeNotifierProvider(
+      create: (context) => GoogleSignInProvider(),
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: DataFromAPI(),
+      ));
 }
 
 class DataFromAPI extends StatefulWidget {
