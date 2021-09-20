@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:imedirep/googleSignInProvider.dart';
+import 'package:provider/provider.dart';
 
 class SiginInPage extends StatelessWidget {
   const SiginInPage({Key? key}) : super(key: key);
@@ -21,7 +23,12 @@ class SiginInPage extends StatelessWidget {
           Center(
             child: ElevatedButton(
               child: Text('Sign Up With Google'),
-              onPressed: () {},
+              //signin button
+              onPressed: () {
+                final provider =
+                    Provider.of<GoogleSignInProvider>(context, listen: false);
+                provider.googleLogin();
+              },
             ),
           ),
         ],
