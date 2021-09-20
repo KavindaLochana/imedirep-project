@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "973526028835",
+    "project_id": "imedirep-1deb0",
+    "storage_bucket": "imedirep-1deb0.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:973526028835:android:a804979d9036fd8678d796",
+        "android_client_info": {
+          "package_name": "com.example.imedirep"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "973526028835-e4466kjuuvspbg8l47qf2qq74n6b9nd7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAv6ZRLpLl3Vetw1WkKyZ5myOngB8tpWGY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "973526028835-e4466kjuuvspbg8l47qf2qq74n6b9nd7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
