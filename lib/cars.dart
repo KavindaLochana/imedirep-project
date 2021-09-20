@@ -1,6 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
-import 'package:imedirep/googleSignInProvider.dart';
+import 'package:imedirep/googleSignIn/googleSignInProvider.dart';
 import 'package:provider/provider.dart';
 import './cars_details.dart';
 

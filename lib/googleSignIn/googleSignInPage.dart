@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:imedirep/googleSignInProvider.dart';
 import 'package:provider/provider.dart';
+import 'package:imedirep/googleSignIn/googleSignInProvider.dart';
 
 class SiginInPage extends StatelessWidget {
   const SiginInPage({Key? key}) : super(key: key);
