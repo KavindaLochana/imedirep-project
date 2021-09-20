@@ -9,6 +9,7 @@ class CarDetails extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Colors.teal,
         title: Text('Car Details'),
       ),
       body: Container(
@@ -21,6 +22,7 @@ class CarDetails extends StatelessWidget {
                       itemCount: snapshot.data.length,
                       itemBuilder: (context, i) {
                         return Card(
+                          color: Colors.grey[200],
                           elevation: 3,
                           child: Column(
                             mainAxisAlignment: MainAxisAlignment.start,
@@ -36,6 +38,7 @@ class CarDetails extends StatelessWidget {
                                             'https://images.pexels.com/photos/116675/pexels-photo-116675.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')),
                                     borderRadius: BorderRadius.all(
                                         Radius.circular(10.0))),
+                                //image form API
                                 //child: Image.network(snapshot.data[i].img_url),
                               ),
                               Column(
@@ -68,7 +71,7 @@ class CarDetails extends StatelessWidget {
                                   ),
                                   Container(
                                     margin: EdgeInsets.all(5),
-                                    child: Text("Price: " +
+                                    child: Text("Price: \$" +
                                         snapshot.data[i].avg_price
                                             .toStringAsFixed(2)),
                                   ),
@@ -77,24 +80,12 @@ class CarDetails extends StatelessWidget {
                             ],
                           ),
                         );
-
-                        // Card(
-                        //   child: Image.network(snapshot.data[i].img_url),
-                        // );
-                        // return ListTile(
-                        //   title: Text(snapshot.data[i].id.toString()),
-                        //   subtitle: Text(snapshot.data[i].name),
-                        //   trailing:
-                        //       Text(snapshot.data[i].num_models.toString()),
-                        // );
                       });
                 } else
-                  return Center(child: CircularProgressIndicator());
-                // return Container(
-                //   child: Center(
-                //     child: Text('Loading..'),
-                //   ),
-                // );
+                  return Center(
+                      child: CircularProgressIndicator(
+                    color: Colors.teal,
+                  ));
               }),
         ),
       ),

@@ -20,7 +20,10 @@ class _CarsState extends State<Cars> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text('Welcome ' + user.displayName!),
+        backgroundColor: Colors.teal,
+        //user name
+        //title: Text('Welcome ' + user.displayName!),
+        title: Text('Please select your car'),
         // centerTitle: true,
         actions: [
           Padding(
@@ -45,11 +48,15 @@ class _CarsState extends State<Cars> {
                     itemCount: snapshot.data.length,
                     itemBuilder: (context, i) {
                       return Card(
+                        color: Colors.grey[200],
                         elevation: 3,
                         child: Column(
                           children: [
                             ListTile(
-                              title: Text(snapshot.data[i].name.toUpperCase()),
+                              title: Text(
+                                snapshot.data[i].name.toUpperCase(),
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
                             ),
                             GestureDetector(
                               child: Container(
@@ -75,31 +82,13 @@ class _CarsState extends State<Cars> {
                           ],
                         ),
                       );
-                      // return ListTile(
-                      //   leading: ConstrainedBox(
-                      //     constraints: BoxConstraints(
-                      //       minWidth: 50,
-                      //       minHeight: 50,
-                      //       maxHeight: 100,
-                      //       maxWidth: 100,
-                      //     ),
-                      //     child: Image.network(snapshot.data[i].img_url),
-                      //   ),
-                      //   title: Text(snapshot.data[i].name),
-                      // );
-                      // Card(
-                      //   child: Image.network(snapshot.data[i].img_url),
-                      // );
-                      // return ListTile(
-                      //   title: Text(snapshot.data[i].id.toString()),
-                      //   subtitle: Text(snapshot.data[i].name),
-                      //   trailing:
-                      //       Text(snapshot.data[i].num_models.toString()),
-                      // );
                     },
                   );
                 } else
-                  return Center(child: CircularProgressIndicator());
+                  return Center(
+                      child: CircularProgressIndicator(
+                    color: Colors.teal,
+                  ));
               }),
         ),
       ),

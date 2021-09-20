@@ -10,7 +10,7 @@ class SiginInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.teal,
+        backgroundColor: Colors.teal[400],
         title: Text('Welcome!'),
         centerTitle: true,
       ),
