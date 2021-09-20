@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:imedirep/googleSignInProvider.dart';
@@ -33,8 +34,21 @@ class DataFromAPI extends StatefulWidget {
 class _DataFromAPIState extends State<DataFromAPI> {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: SiginInPage(),
+    return StreamBuilder(
+      stream: FirebaseAuth.instance.authStateChanges(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.waiting) {
+          return Center(child: CircularProgressIndicator());
+        } else if (snapshot.hasData) {
+          return Cars();
+        } else if (snapshot.hasError) {
+          return Center(
+            child: Text('Something Went Wrong!'),
+          );
+        } else {
+          return SafeArea(child: SiginInPage());
+        }
+      },
     );
 
     // return Scaffold(
