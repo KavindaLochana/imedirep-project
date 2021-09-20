@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
 import 'cars.dart';
 
-void main() {
+import 'googleSignInPage.dart';
+
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(MyApp());
 }
 
@@ -23,12 +29,17 @@ class DataFromAPI extends StatefulWidget {
 class _DataFromAPIState extends State<DataFromAPI> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Car Data'),
-      ),
-      body: Cars(),
+    return SafeArea(
+      child: SiginInPage(),
     );
+
+    // return Scaffold(
+    //   appBar: AppBar(
+    //     title: Text('Car Data'),
+    //   ),
+    //   body: SiginInPage(),
+    //   //body: Cars(),
+    // );
   }
 }
 
