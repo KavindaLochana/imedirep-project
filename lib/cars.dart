@@ -1,5 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:imedirep/googleSignInProvider.dart';
+import 'package:provider/provider.dart';
 import './cars_details.dart';
 
 import './apiData.dart';
@@ -25,7 +27,9 @@ class _CarsState extends State<Cars> {
               padding: const EdgeInsets.only(right: 15.0),
               child: IconButton(
                 onPressed: () {
-                  print('Tapped');
+                  final provider =
+                      Provider.of<GoogleSignInProvider>(context, listen: false);
+                  provider.logOut();
                 },
                 icon: Icon(Icons.logout),
               )),
